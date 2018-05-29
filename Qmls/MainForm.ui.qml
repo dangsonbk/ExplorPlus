@@ -54,7 +54,8 @@ import QtQuick.Controls 1.2
 
 Item {
     anchors.fill: parent
-    property alias tableView: tableView
+    property alias leftPaneView: leftPane
+    property alias rightPaneView: leftPane
 
     SplitView {
         id: splitView
@@ -62,7 +63,7 @@ Item {
         height: parent.height - 30
 
         TableView {
-            id: tableView
+            id: leftPane
             width: parent.width / 2
 
             property int columnWidth: width / 3
@@ -71,22 +72,48 @@ Item {
             TableViewColumn {
                 role: "fileName"
                 title: qsTr("File name")
-                width: tableView.columnWidth - 5
+                width: leftPane.columnWidth - 3
             }
 
             TableViewColumn {
                 role: "fileExt"
                 title: qsTr("File extension")
-                width: tableView.columnWidth
+                width: leftPane.columnWidth
             }
             TableViewColumn {
                 role: "lastName"
                 title: qsTr("Last Name")
-                width: tableView.columnWidth
+                width: leftPane.columnWidth
+            }
+        }
+
+        TableView {
+            id: rightPane
+            Layout.fillWidth: true
+
+            property int columnWidth: width / 3
+            Layout.minimumWidth: splitView.width / 3
+
+            TableViewColumn {
+                role: "fileName"
+                title: qsTr("File name")
+                width: rightPane.columnWidth - 3
+            }
+
+            TableViewColumn {
+                role: "fileExt"
+                title: qsTr("File extension")
+                width: rightPane.columnWidth
+            }
+            TableViewColumn {
+                role: "lastName"
+                title: qsTr("Last Name")
+                width: rightPane.columnWidth
             }
         }
 
         TabView {
+            visible: false
             id: tabView
 
             Tab {

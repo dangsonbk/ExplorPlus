@@ -1,14 +1,10 @@
-#include <QGuiApplication>
-#include <QQmlApplicationEngine>
+#include "main.h"
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
-    QQmlApplicationEngine engine;
-    engine.load(QUrl(QLatin1String("qrc:/Qmls/main.qml")));
-    if (engine.rootObjects().isEmpty())
-        return -1;
+    UIWindows::getInstance();
 
     return app.exec();
 }

@@ -46,7 +46,58 @@ ApplicationWindow {
         Menu {
             title: qsTr("&File")
             MenuItem {
+                text: qsTr("Pack")
+                shortcut: "Ctrl+P"
+                onTriggered: Qt.quit()
+            }
+            MenuItem {
+                text: qsTr("Unpack")
+                shortcut: "Ctrl+Shift+P"
+                onTriggered: Qt.quit()
+            }
+            MenuItem {
+                text: qsTr("Property")
+                shortcut: StandardKey.Quit
+                onTriggered: Qt.quit()
+            }
+            Menu {
+                title: qsTr("Export")
+                MenuItem {
+                    text: qsTr("Filename list")
+                    shortcut: StandardKey.Quit
+                    onTriggered: Qt.quit()
+                }
+                MenuItem {
+                    text: qsTr("Files report")
+                    shortcut: StandardKey.Quit
+                    onTriggered: Qt.quit()
+                }
+            }
+            MenuSeparator { }
+            MenuItem {
+                text: qsTr("Unlock")
+                shortcut: StandardKey.Quit
+                onTriggered: Qt.quit()
+            }
+            MenuSeparator { }
+            MenuItem {
+                text: qsTr("Create checksum")
+                shortcut: StandardKey.Quit
+                onTriggered: Qt.quit()
+            }
+            MenuItem {
+                text: qsTr("Verify checksum")
+                shortcut: StandardKey.Quit
+                onTriggered: Qt.quit()
+            }
+            MenuSeparator { }
+            MenuItem {
                 text: qsTr("E&xit")
+                shortcut: StandardKey.Quit
+                onTriggered: Qt.quit()
+            }
+            MenuItem {
+                text: qsTr("Restart")
                 shortcut: StandardKey.Quit
                 onTriggered: Qt.quit()
             }
@@ -61,6 +112,39 @@ ApplicationWindow {
             }
             MenuItem {
                 action: pasteAction
+            }
+        }
+        Menu {
+            title: qsTr("Git")
+            MenuItem {
+                text: qsTr("Pull")
+                shortcut: StandardKey.Quit
+                onTriggered: Qt.quit()
+            }
+            MenuItem {
+                text: qsTr("Commit")
+                shortcut: StandardKey.Quit
+                onTriggered: Qt.quit()
+            }
+            MenuItem {
+                text: qsTr("Push")
+                shortcut: StandardKey.Quit
+                onTriggered: Qt.quit()
+            }
+            Menu {
+                title: qsTr("Gerrit")
+                MenuItem {
+                    text: qsTr("Push")
+                    shortcut: StandardKey.Quit
+                    onTriggered: Qt.quit()
+                }
+            }
+        }
+        Menu {
+            title: qsTr("&Preferences")
+            MenuItem {
+                text: qsTr("About...")
+                onTriggered: UIBridge.uiEvent("test", "test");
             }
         }
         Menu {

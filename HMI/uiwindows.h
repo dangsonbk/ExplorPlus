@@ -4,10 +4,13 @@
 #include <QObject>
 #include <QQmlContext>
 #include <QQmlApplicationEngine>
+#include <QDateTime>
+#include <QDir>
 
 #include <QDebug>
 
 #include "HMI/uibridge.h"
+#include "HMI/listviewfeeder.h"
 
 class UIWindows : public QObject
 {
@@ -16,6 +19,7 @@ public:
     static UIWindows* getInstance();
 
     Q_INVOKABLE int initWindow();
+    Q_INVOKABLE int loadPanes();
 //    Q_INVOKABLE void displayScreen(int, int);
 
 public slots:

@@ -1,10 +1,12 @@
 QT += qml quick
+QT += widgets
 
 CONFIG += c++11
 
 SOURCES += main.cpp \
     HMI/uibridge.cpp \
-    HMI/uiwindows.cpp
+    HMI/uiwindows.cpp \
+    HMI/listviewfeeder.cpp
 
 RESOURCES += qml.qrc
 
@@ -33,4 +35,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     HMI/uibridge.h \
     main.h \
-    HMI/uiwindows.h
+    HMI/uiwindows.h \
+    HMI/listviewfeeder.h
+
+DISTFILES +=
